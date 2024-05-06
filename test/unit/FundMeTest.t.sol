@@ -58,8 +58,6 @@ contract FundMeTest is StdCheats, Test {
         assertEq(funder, USER);
     }
 
-    // https://twitter.com/PaulRBerg/status/1624763320539525121
-
     modifier funded() {
         vm.prank(USER);
         fundMe.fund{value: SEND_VALUE}();

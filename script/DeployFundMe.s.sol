@@ -10,6 +10,7 @@ contract DeployFundMe is Script {
         HelperConfig helperConfig = new HelperConfig(); // This comes with our mocks!
         address priceFeed = helperConfig.activeNetworkConfig();
 
+        // Anything before startBroadcast and after stopBroadcast is not a real transaction/ is mock
         vm.startBroadcast();
         FundMe fundMe = new FundMe(priceFeed);
         vm.stopBroadcast();
